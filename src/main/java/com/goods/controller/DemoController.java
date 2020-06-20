@@ -14,13 +14,19 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RefreshScope
 @RequestMapping(value = "/demo")
 public class DemoController {
 
     private static final Logger logger = LoggerFactory.getLogger(DemoController.class);
+
+    @Value("${word}")
+    private String word;
 
     @Autowired
     private DemoService demoService;
@@ -35,6 +41,7 @@ public class DemoController {
 
         ResponseResult<IPage<DemoVo>> result = new ResponseResult();
         try {
+            System.out.println(word);
             IPage<DemoBean> iPage = new Page<>(pageNum, pageSize);
             QueryWrapper<DemoBean> wrapper = new QueryWrapper<>();
             if(StringUtils.isNotEmpty(phone)) {
