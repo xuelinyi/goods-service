@@ -1,0 +1,37 @@
+{
+  "groups": [
+    {
+      "name": "rocketmq.consumer",
+      "type": "goods.config.ConsumerConfig",
+      "sourceType": "goods.config.ConsumerConfig"
+    },
+    {
+      "name": "rocketmq.producer",
+      "type": "goods.config.ProducerConfig",
+      "sourceType": "goods.config.ProducerConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rocketmq.consumer.group-name",
+      "type": "java.lang.String",
+      "sourceType": "goods.config.ConsumerConfig"
+    },
+    {
+      "name": "rocketmq.consumer.namesrv-addr",
+      "type": "java.lang.String",
+      "sourceType": "goods.config.ConsumerConfig"
+    },
+    {
+      "name": "rocketmq.producer.group-name",
+      "type": "java.lang.String",
+      "sourceType": "goods.config.ProducerConfig"
+    },
+    {
+      "name": "rocketmq.producer.namesrv-addr",
+      "type": "java.lang.String",
+      "sourceType": "goods.config.ProducerConfig"
+    }
+  ],
+  "hints": []
+}
